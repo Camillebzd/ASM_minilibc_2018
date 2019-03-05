@@ -1,9 +1,9 @@
 bits 64
 
-global my_strlen 		; size_t strlen(char const *s)
+global strlen
 section .text
 
-my_strlen:
+strlen:
 	xor rsi, rsi
 	cmp rdi, 0
 	jz end
