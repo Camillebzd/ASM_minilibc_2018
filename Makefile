@@ -20,16 +20,19 @@ NAME 		=	libasm.so
 SRCS_DIR	=	src/
 
 SRCS_FILES	=	strlen.asm		\
+				strchr.asm		\
 
 SRCS		=	$(addprefix $(SRCS_DIR), $(SRCS_FILES))
 
 OBJS 		=	$(SRCS:.asm=.o)
 
+%.o: %.asm
+			$(CC) -o $@ $< $(ASMFLAGS)
+
 all:		$(NAME)
 
-$(NAME): 	$(SRCS)
-			$(CC) $(ASMFLAGS) $(SRCS)
-			gcc $(OBJS) $(LDFLAGS) -o $(NAME)
+$(NAME): 	$(OBJS)
+			ld $(LDFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 			$(RM) $(OBJS)
