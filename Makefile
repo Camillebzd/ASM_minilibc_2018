@@ -21,6 +21,7 @@ SRCS_DIR	=	src/
 
 SRCS_FILES	=	strlen.asm		\
 				strchr.asm		\
+				strcmp.asm		\
 
 SRCS		=	$(addprefix $(SRCS_DIR), $(SRCS_FILES))
 
