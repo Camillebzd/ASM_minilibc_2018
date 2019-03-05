@@ -11,8 +11,8 @@ strcmp:
     je null
 
 comp:
-    mov al, [rdi + rcx]
-    mov r8b, [rsi + rcx]
+    mov al, byte[rdi + rcx]
+    mov r8b, byte[rsi + rcx]
     cmp al, 0
     je find_value
     cmp r8b, 0
