@@ -25,6 +25,7 @@ SRCS_FILES	=	strlen.asm		\
 				memset.asm		\
 				memcpy.asm		\
 				strstr.asm		\
+				strncmp.asm		\
 
 SRCS		=	$(addprefix $(SRCS_DIR), $(SRCS_FILES))
 
